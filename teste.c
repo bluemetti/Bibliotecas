@@ -5,9 +5,9 @@ int main(){
     tp_listase *l;
     l = inicializa_lista();
     if (insere_listase_no_fim){
-        printf("deu familia");
+        printf("deu familia\n");
     }else{
-        printf("deu bosta familia");
+        printf("deu bosta familia\n");
     }
     insere_listase_no_fim(&l,10);
     insere_listase_no_fim(&l,20);   
