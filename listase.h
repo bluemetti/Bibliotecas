@@ -46,6 +46,25 @@ void imprime_listase(tp_listase * lista){
         atu = atu->prox;
     }
 }
+int remove_listase(tp_listase **lista, tp_item e){
+    tp_listase *ant, *atu;
+    atu = *lista;
+    ant = NULL;
+    while((atu!=NULL)&&(atu->info!=e)){
+        ant = atu;
+        atu = atu->prox;
+    }
+    if (atu == NULL) return 0;
+    if (ant == NULL) {
+        *lista = atu->prox;
+    }
+    else{
+        ant->prox = atu->prox;
+    }
+    free(atu);
+    atu=NULL;
+    return 1;
+}
 
 
 

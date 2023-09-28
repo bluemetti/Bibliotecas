@@ -12,5 +12,6 @@ int main(){
     insere_listase_no_fim(&l,10);
     insere_listase_no_fim(&l,20);   
     insere_listase_no_fim(&l,30);
+    remove_listase(&l, 20);
     imprime_listase(l);
 }
