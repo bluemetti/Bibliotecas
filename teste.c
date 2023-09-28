@@ -10,7 +10,7 @@ int main(){
         printf("deu bosta familia");
     }
     insere_listase_no_fim(&l,10);
-    insere_listase_no_fim(&l,20);
+    insere_listase_no_fim(&l,20);   
     insere_listase_no_fim(&l,30);
-    printf("\nprimeiro: %d segundo: %d terceiro: %d", l->info, l->prox->info, l->prox->prox->info);
+    imprime_listase(l);
 }

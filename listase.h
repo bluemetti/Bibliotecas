@@ -38,6 +38,14 @@ int insere_listase_no_fim(tp_listase **l, tp_item e){
     }
     return 1;
 }
+void imprime_listase(tp_listase * lista){
+    tp_listase *atu;
+    atu = lista;
+    while(atu!=NULL){
+        printf("%d\n", atu->info);
+        atu = atu->prox;
+    }
+}
 
 
 
