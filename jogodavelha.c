@@ -2,6 +2,10 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+
+int verifica_win(char m[3][3]){
+}
+
 int main()
 {
     system("color 1F");
