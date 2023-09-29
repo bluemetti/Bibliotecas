@@ -65,7 +65,34 @@ int remove_listase(tp_listase **lista, tp_item e){
     atu=NULL;
     return 1;
 }
-
+tp_listase *busca_listase(tp_listase *lista, tp_item e){
+    tp_listase *atu;
+    atu = lista;
+    while ((atu!=NULL)&&(atu->info!=e)){
+        atu = atu->prox;
+    }
+    return atu;
+}
+int tamanho_listase(tp_listase *lista){
+    int cont = 0;
+    tp_listase *atu;
+    atu = lista;
+    while(atu!=NULL){
+        cont ++;
+        atu = atu->prox;
+    }
+    return cont;
+}
+void destroi_listase(tp_listase **l){
+    tp_listase *atu;
+    atu = *l;
+    while (atu!=NULL){
+        *l = atu->prox;
+        free(atu);
+        atu = *l;
+    }
+    *l = NULL;
+}
 
 
 
