@@ -40,7 +40,7 @@ int main(){
     insere_listase_no_fim(&l,30);
     printf("tamanho: %d\n", tamanho_listase(l));
     insere_ordenado(&l, 15);
-    insere_ordenado(&l, 1);
+
     imprime_listase(l);
     printf("tamanho: %d\n", tamanho_listase(l));
     destroi_listase(&l);
