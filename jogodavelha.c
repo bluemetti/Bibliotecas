@@ -3,6 +3,13 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+int coordenada_valida(char m[][3],int i, int j){
+	if (i>2) return 0;
+	if (j>2) return 0;
+	if (m[i][j] == ' ') return 1;
+	return 0;
+	
+}
 int verifica_win(char m[3][3]){
 }
 void imprime_matriz(char m[3][3]){
@@ -49,12 +56,22 @@ int main()
         printf("jogador %s, digite uma coordenada\n", nome);
         scanf("%d", &i);
         scanf("%d", &i1);
+        while(!coordenada_valida(m,i, i1)){
+        	printf("coordenada invalida jogue novamente\n");
+        	scanf("%d", &i);
+        	scanf("%d", &i1);
+		}
         m[i][i1] = 'X';
         system("cls");
         imprime_matriz(m);
         printf("jogador %s, digite uma coordenada\n", nome1);
         scanf("%d", &i);
         scanf("%d", &i1);
+        while(!coordenada_valida(m, i, i1)){
+        	printf("coordenada invalida jogue novamente\n");
+        	scanf("%d", &i);
+        	scanf("%d", &i1);
+		}
         m[i][i1] = 'O';
         system("cls");
         imprime_matriz(m);
