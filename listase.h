@@ -153,6 +153,7 @@ int conecta_listase(tp_listase **l, tp_listase **l1){
     }
     atu->prox = *l1;
     atu1->prox = *l;
+    *l1 = *l;
     return 1;
 }
 
