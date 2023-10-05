@@ -140,6 +140,22 @@ void destroi_impar(tp_listase **l){
     }
 }
 
+int conecta_listase(tp_listase **l, tp_listase **l1){
+    if (listase_vazia(*l)||listase_vazia(*l1)) return 0;
+    tp_listase *atu, *atu1;
+    atu = *l;
+    atu1 = *l1;
+    while(atu->prox != NULL){
+        atu = atu->prox;
+    }
+    while(atu1->prox != NULL){
+        atu1 = atu1->prox;
+    }
+    atu->prox = *l1;
+    atu1->prox = *l;
+    return 1;
+}
+
 
 
 
