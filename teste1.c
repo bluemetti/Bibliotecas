@@ -18,4 +18,11 @@ int main(){
     conecta_listase(&l, &l1);
     imprime_listase(l);
     //https://www.youtube.com/watch?v=m1L96wvUXFI;
+    /*{
+    "window.zoomLevel": 3,
+    "workbench.colorTheme": "Dark SynthWave '84",
+    "editor.fontFamily": "Fira Code",
+    "editor.fontLigatures": true
+
+}*/
 }
