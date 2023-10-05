@@ -17,4 +17,5 @@ int main(){
     insere_listase_no_fim(&l1, 11);
     conecta_listase(&l, &l1);
     imprime_listase(l);
+    //https://www.youtube.com/watch?v=m1L96wvUXFI;
 }
