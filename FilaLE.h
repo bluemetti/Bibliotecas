@@ -55,7 +55,7 @@ int remove_fila (tp_fila *fila, tp_item *e){
   *e=fila->ini->info;
   aux=fila->ini;  
 
-  if (fila->ini == fila->fim) //Se for o único nó da fila
+  if (fila->ini == fila->fim) //Se for o ï¿½nico nï¿½ da fila
      fila->ini=fila->fim=NULL;
   else
      fila->ini=fila->ini->prox;

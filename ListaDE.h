@@ -1,9 +1,9 @@
-// Na nesta lista duplamente encadeada usamos um descritor (struct de nome tp_listad). É um dado estruturado
-// que tem como objetivo melhorar a manipulação e o acesso aos nós da lista. Este descritor é alocado na memória
-//dinamicamente e possui 2 (ou 3) membros. Um ponteiro (*ini) que vai apontar para o 1o nó (tp_no) da lista, 
-//outro ponteiro (*fim) que vai apontar para o último nó da lista e, opcionalmente, o tamanho da lista (tamanho)
+// Na nesta lista duplamente encadeada usamos um descritor (struct de nome tp_listad). ï¿½ um dado estruturado
+// que tem como objetivo melhorar a manipulaï¿½ï¿½o e o acesso aos nï¿½s da lista. Este descritor ï¿½ alocado na memï¿½ria
+//dinamicamente e possui 2 (ou 3) membros. Um ponteiro (*ini) que vai apontar para o 1o nï¿½ (tp_no) da lista, 
+//outro ponteiro (*fim) que vai apontar para o ï¿½ltimo nï¿½ da lista e, opcionalmente, o tamanho da lista (tamanho)
 
-//É importante difernciar as estruturas nesta biblioteca. Temos dois dados estruturados: a descritor e o nó da lista
+//ï¿½ importante difernciar as estruturas nesta biblioteca. Temos dois dados estruturados: a descritor e o nï¿½ da lista
 
 #ifndef LISTADE_H
 #define LISTADE_H
@@ -13,21 +13,21 @@
 
 typedef int tp_item; 
 
-//dados estruturado que representa o descritor
+//dados estruturado que representa o nÃ³ da lista
 typedef struct tp_no_aux {   
   struct tp_no_aux *ant;  
   tp_item info;  
   struct tp_no_aux *prox;   
 } tp_no; 
 
-//dado estruturado que representa o nó da lista
+//dado estruturado que representa o descritor da lista
 typedef struct {   
   tp_no *ini;   
   tp_no *fim;   
 //  int tamanho;   
 } tp_listad;
 
-//aloca-se memória para o descritor (explicado no ínicio deste arquivo) e faz o seus ponteiros apontarem para o Nulo
+//aloca-se memï¿½ria para o descritor (explicado no ï¿½nicio deste arquivo) e faz o seus ponteiros apontarem para o Nulo
 tp_listad *inicializa_listad(){
    tp_listad *lista=(tp_listad*) malloc(sizeof(tp_listad));   
    lista->ini = NULL;   
@@ -43,14 +43,14 @@ int listad_vazia(tp_listad *lista) {
 	return 0;	
 }
 
-//Aloca um nó da lista
+//Aloca um nï¿½ da lista
 tp_no *aloca() {
 	tp_no* pt;
 	pt=(tp_no*) malloc(sizeof(tp_no));
 	return pt;
 }
 
-//insere um novo nó na lista
+//insere um novo nï¿½ na lista
 int insere_listad_no_fim (tp_listad *lista, tp_item e){   
   tp_no *novo;   
   novo=aloca();
@@ -71,10 +71,10 @@ int insere_listad_no_fim (tp_listad *lista, tp_item e){
   return 1;   
 }        
 
-//imprime os conteúdos da lista (de frente para trás ou de trás pra frente)
+//imprime os conteï¿½dos da lista (de frente para trï¿½s ou de trï¿½s pra frente)
 void imprime_listad(tp_listad *lista, int ordem) {
 	if (lista==NULL)
-		printf("Lista não inicializada");
+		printf("Lista nï¿½o inicializada");
 	else {
      tp_no *atu;     
      switch (ordem) {
@@ -112,7 +112,7 @@ int remove_listad (tp_listad *lista, tp_item e){
       atu->prox->ant = NULL;
       }  
    else {
-      if (lista->fim == atu) { // se for o último nó da lista
+      if (lista->fim == atu) { // se for o ï¿½ltimo nï¿½ da lista
        lista->fim = atu->ant;
        atu->ant->prox = NULL;              
        }
@@ -127,7 +127,7 @@ int remove_listad (tp_listad *lista, tp_item e){
   return 1;   
 }        
 
-//Com base em um conteúdo, retorna-se o endereço do nó que contém o conteúdo
+//Com base em um conteï¿½do, retorna-se o endereï¿½o do nï¿½ que contï¿½m o conteï¿½do
 tp_no * busca_listade (tp_listad *lista, tp_item e){   
   tp_no *atu;
   atu = lista->ini;
@@ -136,7 +136,7 @@ tp_no * busca_listade (tp_listad *lista, tp_item e){
   return atu;
 }        
 
-//Retira da memória todos os nós da lista e também o descritor
+//Retira da memï¿½ria todos os nï¿½s da lista e tambï¿½m o descritor
 tp_listad * Destroi_listad (tp_listad *lista){   
   tp_no *atu;
   atu = lista->ini;
