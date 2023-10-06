@@ -150,4 +150,3 @@ tp_listad * Destroi_listad (tp_listad *lista){
 }  
 
 #endif
-
