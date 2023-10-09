@@ -3,6 +3,24 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+char ganhoul(char m[][3]){
+	int i;
+	for(i = 0; i<3; i++){
+		if ((m[i][0]==m[i][1])&&(m[i][0]==m[i][2])&&(m[i][1]!=' ')){
+			return m[i][0];
+		}
+	}
+	return ' ';
+}
+char ganhouc(char m[][3]){
+	int i;
+	for(i = 0; i<3; i++){
+		if ((m[0][i]==m[1][i])&&(m[0][i]==m[2][i])&&(m[1][i]!=' ')){
+			return m[0][i];
+		}
+	}
+	return ' ';
+}
 int coordenada_valida(char m[][3],int i, int j){
 	if (i>2) return 0;
 	if (j>2) return 0;
@@ -10,8 +28,7 @@ int coordenada_valida(char m[][3],int i, int j){
 	return 0;
 	
 }
-int verifica_win(char m[3][3]){
-}
+
 void imprime_matriz(char m[3][3]){
 		printf("         0 1 2\n");
         printf("       0 %c|%c|%c \n", m[0][0], m[0][1], m[0][2]);
@@ -52,7 +69,7 @@ int main()
     inicializa_matriz(m);
     imprime_matriz(m);
     for (i = 0; i < 10; i++)
-    {
+    {	
         printf("jogador %s, digite uma coordenada\n", nome);
         scanf("%d", &i);
         scanf("%d", &i1);
@@ -64,6 +81,10 @@ int main()
         m[i][i1] = 'X';
         system("cls");
         imprime_matriz(m);
+        if((ganhoul(m)=='X')||(ganhouc(m)=='X')){
+        	printf("\nPARABENS %s, VOCE VENCEU!!!\n", nome);
+        	return 0;
+		}
         printf("jogador %s, digite uma coordenada\n", nome1);
         scanf("%d", &i);
         scanf("%d", &i1);
@@ -75,5 +96,9 @@ int main()
         m[i][i1] = 'O';
         system("cls");
         imprime_matriz(m);
+        if((ganhoul(m)=='O')||(ganhouc(m)=='O')){
+        	printf("\nPARABENS %s, VOCE VENCEU!!!\n", nome1);
+        	return 0;
+		}
     }
 }
