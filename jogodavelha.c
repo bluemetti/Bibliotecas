@@ -3,6 +3,20 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+
+char ganhoud(char m[][3]){
+	if ((m[0][0] ==m[1][1])&&(m[1][1]==m[2][2])&&(m[0][0]!= ' ')){
+		return m[0][0];
+	}
+	if ((m[0][2] == m[1][1])&&(m[1][1] == m[2][0])&&(m[0][2]!= ' ')){
+		return m[0][2];
+	}
+	return ' ';
+}
+
+
+
+
 char ganhoul(char m[][3]){
 	int i;
 	for(i = 0; i<3; i++){
@@ -64,11 +78,11 @@ int main()
     printf("QUE COMECEM OS JOGOS");
     printf("\n#################################################\n");
     char m[3][3];
-    int i, i1;
+    int i, i1, j;
     char aux;
     inicializa_matriz(m);
     imprime_matriz(m);
-    for (i = 0; i < 10; i++)
+    for (j = 0; j < 10; j++)
     {	
         printf("jogador %s, digite uma coordenada\n", nome);
         scanf("%d", &i);
@@ -81,9 +95,13 @@ int main()
         m[i][i1] = 'X';
         system("cls");
         imprime_matriz(m);
-        if((ganhoul(m)=='X')||(ganhouc(m)=='X')){
+        if((ganhoul(m)=='X')||(ganhouc(m)=='X')||(ganhoud(m)=='X')){
         	printf("\nPARABENS %s, VOCE VENCEU!!!\n", nome);
         	return 0;
+		}
+		if(j == 4){
+			printf("\nJOGO EMPATADO, PARABENS AOS BRAVOS GUERREIROS\n\n###############################################\n\nAGRADECEMOS POR JOGAREM NOSSO JOGO\n");
+			return 0;
 		}
         printf("jogador %s, digite uma coordenada\n", nome1);
         scanf("%d", &i);
@@ -96,7 +114,7 @@ int main()
         m[i][i1] = 'O';
         system("cls");
         imprime_matriz(m);
-        if((ganhoul(m)=='O')||(ganhouc(m)=='O')){
+        if((ganhoul(m)=='O')||(ganhouc(m)=='O')||(ganhoud(m)=='O')){
         	printf("\nPARABENS %s, VOCE VENCEU!!!\n", nome1);
         	return 0;
 		}
