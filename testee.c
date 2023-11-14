@@ -30,5 +30,5 @@ int main(){
     insere_no(&arvre, 10);
     insere_no(&arvre, 75);
     pos_ordem(arvre);
-    printf("\n\naltura: %d", niveis_arvore(arvre));
+    printf("\n\naltura: %d", numero_nos(arvre));
 }

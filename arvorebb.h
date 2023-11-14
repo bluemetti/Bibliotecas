@@ -73,6 +73,12 @@ int niveis_arvore(tp_arvore raiz){
     if(alt_esq > alt_dir)return alt_esq+1;
     return alt_dir+1;
 }
+int numero_nos(tp_arvore raiz){
+    if (raiz==NULL)return 0;
+    int nos_esq = numero_nos(raiz->esq);
+    int nos_dir = numero_nos(raiz->esq);
+    return (nos_esq+nos_dir+1);
+}
 
 
 
