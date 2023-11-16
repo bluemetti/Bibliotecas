@@ -1,5 +1,8 @@
+#ifndef ARVOREBB_H
+#define ARVOREBB_H
 #include<stdlib.h>
 #include<stdio.h>
+
 	
 typedef int tp_item;	
 	
@@ -193,3 +196,5 @@ void destroi_arvore(tp_arvore *raiz){
 }
 
 
+
+#endif
