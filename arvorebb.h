@@ -4,7 +4,7 @@
 #include<stdio.h>
 
 	
-typedef int tp_item;	
+typedef char tp_item;	
 	
 typedef struct tp_no{
 	struct tp_no *esq;
@@ -68,7 +68,7 @@ int insere_no(tp_arvore *raiz, tp_item e)
 void pre_ordem(tp_no *p) //imprime os elementos em pre-ordem
 {
 	if(p!=NULL)
-	{	printf("\n%d\n",p->info);
+	{	printf("%c ",p->info);
 		pre_ordem(p->esq);
 		pre_ordem(p->dir);
 	}
@@ -76,7 +76,7 @@ void pre_ordem(tp_no *p) //imprime os elementos em pre-ordem
 void em_ordem (tp_no *p) {  //imprime os elementos em ordem
   if (p != NULL) {
 	em_ordem (p->esq);
-	printf("\n%d\n",p->info);
+	printf("%c ",p->info);
 	em_ordem (p->dir);
     }
 }
@@ -85,7 +85,7 @@ void pos_ordem (tp_no *p) { //imprime os elementos em pós-ordem
 	 if (p != NULL) {
 	 pos_ordem (p->esq);
 	 pos_ordem (p->dir);
-	printf("\n%d\n",p->info);
+	printf("%c ",p->info);
 }
 }
 
